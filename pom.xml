@@ -11,6 +11,7 @@
     <modules>
         <module>domain</module>
         <module>app</module>
+        <module>validator</module>
     </modules>
 
     <properties>
@@ -38,6 +39,11 @@
             <dependency>
                 <groupId>com.holovetskyi</groupId>
                 <artifactId>domain</artifactId>
+                <version>${module.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.holovetskyi</groupId>
+                <artifactId>validator</artifactId>
                 <version>${module.version}</version>
             </dependency>
         </dependencies>

@@ -20,6 +20,10 @@
                 <groupId>com.holovetskyi</groupId>
                 <artifactId>app</artifactId>
             </dependency>
+            <dependency>
+                <groupId>com.holovetskyi</groupId>
+                <artifactId>validator</artifactId>
+            </dependency>
         </dependencies>
 
     <properties>
