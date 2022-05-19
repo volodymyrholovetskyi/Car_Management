@@ -23,5 +23,13 @@ public class Car {
    BigDecimal mileage;
    List<String> components;
 
+   public boolean hasPriceBetween(BigDecimal priceFrom, BigDecimal priceTo) {
+      return price.compareTo(priceFrom) >= 0 && price.compareTo(priceTo) <= 0;
+   }
+
+   public boolean containsComponent(String component){
+      return components.contains(component);
+   }
+
 }
 

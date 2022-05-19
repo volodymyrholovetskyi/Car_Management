@@ -16,17 +16,5 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.holovetskyi</groupId>
-            <artifactId>domain</artifactId>
-            <version>${module.version}</version>
-            <type>import</type>
-        </dependency>
-        <dependency>
-            <groupId>com.holovetskyi</groupId>
-            <artifactId>domain</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

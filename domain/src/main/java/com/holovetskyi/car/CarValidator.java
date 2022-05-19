@@ -5,6 +5,7 @@ import com.holovetskyi.validator.Validator;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class CarValidator implements Validator<Car> {
     @Override
@@ -31,13 +32,14 @@ public class CarValidator implements Validator<Car> {
             return errors;
         } else if (car.price.compareTo(BigDecimal.ZERO) < 0) {
             errors.put("price", "cannot be negative");
+            return errors;
         }
 
         var mileage = car.mileage;
         if (mileage == null) {
             errors.put("mileage", "null");
             return errors;
-        } else if (car.price.compareTo(BigDecimal.ZERO) < 0) {
+        } else if (car.mileage.compareTo(BigDecimal.ZERO) < 0) {
             errors.put("mileage", "cannot be negative");
             return errors;
         }
@@ -47,10 +49,11 @@ public class CarValidator implements Validator<Car> {
             errors.put("components", "null");
             return errors;
         }
-        boolean isValidate = components.stream()
-                .anyMatch(component -> component.matches("[A-Z ]+"));
+        Optional<String> component = components.stream()
+                .filter(c -> !c.matches("[A-Z ]+"))
+                .findFirst();
 
-        if (!isValidate) {
+        if (component.isPresent()) {
             errors.put("components", "not correct");
             return errors;
         }
