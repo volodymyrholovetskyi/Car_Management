@@ -1,2 +1,6 @@
-package com.holovetskyi.repo;public enum Direction {
+package com.holovetskyi.repo;
+
+public enum Direction {
+
+    DESCENDING, ASCENDING
 }
