@@ -1,0 +1,22 @@
+[
+  {
+    "model": "BMW",
+    "price": 1250,
+    "color": "BLACK",
+    "mileage": 1300.0,
+    "components": [
+      "DPS",
+      "ALLOY WHEELS"
+    ]
+  },
+  {
+    "model": "AUDI",
+    "price": 1200,
+    "color": "BLACK",
+    "mileage": 1500.0,
+    "components": [
+      "DPS",
+      "ALLOY WHEELS"
+    ]
+  }
+]

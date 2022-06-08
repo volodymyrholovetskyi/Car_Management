@@ -1,90 +1,138 @@
 package com.holovetskyi;
 
-import java.io.File;
+import com.holovetskyi.car.Car;
+import com.holovetskyi.car.CarValidator;
+import com.holovetskyi.car.type.Color;
+import com.holovetskyi.json.CarsJsonConverter;
+import com.holovetskyi.repo.CarRepo;
+import com.holovetskyi.repo.statistics.StatisticsCollector;
+import com.holovetskyi.validator.Validator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.math.BigDecimal;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 
+import static com.holovetskyi.car.type.Color.BLACK;
+import static com.holovetskyi.repo.type.Direction.ASCENDING;
+import static com.holovetskyi.repo.type.Direction.DESCENDING;
+import static com.holovetskyi.repo.type.ModelType.BMW;
+import static com.holovetskyi.repo.type.SortType.COLOR;
+import static com.holovetskyi.repo.type.SortType.MILEAGE;
+import static com.holovetskyi.repo.type.SortType.MODEL;
+import static com.holovetskyi.repo.type.SortType.PRICE;
+
 public class App {
 
-//    private static final File FILE = new File("Car.json");
-//
-//    public static void main(String[] args) {
-//
-//        /**ADDING CARS TO JSON FILE*/
-//        Init.init(FILE);
-//
-//        /**FROM JSON TO CARS*/
-//        var carsDao = new CarsImpl(FILE);
-//
-//
-//        /**SORTING*/
-//        System.out.println("\n-----------------SORT BY MODEL-----------------");
-//        String sortByModel = "model";
-//        List<Car> models = carsDao.sortCars(sortByModel, ASCENDING);
-//        models.forEach(System.out::println);
-//
-//        System.out.println("\n-----------------SORT BY COLOR-----------------");
-//        String sortByColor = "color";
-//        List<Car> colors = carsDao.sortCars(sortByColor, ASCENDING);
-//        colors.forEach(System.out::println);
-//
-//        System.out.println("\n-----------------SORT BY PRICE-----------------");
-//        String sortByPrice = "price";
-//        List<Car> price = carsDao.sortCars(sortByPrice, DESCENDING);
-//        price.forEach(System.out::println);
-//
-//        System.out.println("\n-----------------SORT BY MILEAGE-----------------");
-//        String sortByMileage = "mileage";
-//        List<Car> mileages = carsDao.sortCars(sortByMileage, DESCENDING);
-//        mileages.forEach(System.out::println);
-//
-//        /**MILEAGE WITH THE GREATER VALUE*/
-//        System.out.println("\n-----------------MILEAGE WITH THE GREATER VALUE-----------------");
-//        BigDecimal mileage = new BigDecimal("250");
-//        List<Car> carMileage = carsDao.mileageWithTheHighestValue(mileage);
-//        carMileage.forEach(System.out::println);
-//
-//        /**GET CARS OF A SPECIFIC COLOR*/
-//        System.out.println("\n-----------------GET CARS OF A SPECIFIC COLOR-----------------");
-//        Map<Color, List<Car>> carQuantity = carsDao.getCarByColor(BLACK);
-//        carQuantity.forEach((k, v) -> System.out.printf(" Color: %s \n Get car by color: %s\n", k, v));
-//
-//
-//        /**EXPENSIVE CAR*/
-//        System.out.println("\n---------------FIND THE MOST EXPENSIVE CAR WITH A SPECIFIC MODEL NAME-------------");
-//        String model = "BMW";
-//        Map<String, List<Car>> expensiveCarByModel = carsDao.getExpensiveCarByModel(model);
-//        expensiveCarByModel.forEach((k, v) -> System.out.printf(" Model: %s \n Get car by model: %s\n", k, v));
-////        expensiveCarByModel.forEach(car -> System.out.printf(" Model: %s \n Get car by model: %s\n", model, car));
-//
-//        /**CAR STATISTICS*/
-//        System.out.println("\n---------------CAR STATISTICS-------------");
-//        CarStatisticsPriceAndMileage carStatisticsPriceAndMileage = carsDao.getCarStatistics();
-//        log.info(carStatisticsPriceAndMileage);
-//
-//        /**THE MOST EXPENSIVE CAR*/
-//        System.out.println("\n---------------THE MOST EXPENSIVE CAR-------------");
-//        List<Car> expensiveCar = carsDao.getExpensiveCar();
-//        System.out.println(expensiveCar);
-//
-//        /**AN ALPHABETICALLY SORTED COLLECTION OF COMPONENTS*/
-//        System.out.println("\n---------------AN ALPHABETICALLY SORTED COLLECTION OF COMPONENTS-------------");
-//        List<Car> sortedComponents = carsDao.sortedComponents();
-//        System.out.println(sortedComponents);
-////
-//        /**KEY COMPONENT*/
-//        System.out.println("\n---------------KEY COMPONENT-------------");
-//        Map<List<String>, List<Car>> mapKeyComponent = carsDao.getMapKeyComponent();
-//        mapKeyComponent.forEach((k,v) -> System.out.printf(" Model: %s \n Get car by model: %s\n", k, v));
-//
-//        /**FILTERING BY PRICE*/
-//        System.out.println("\n---------------FILTERING BY PRICE-------------");
-//        BigDecimal min = new BigDecimal("1299");
-//        BigDecimal max = new BigDecimal("1600");
-//        List<Car> filterByPrice = carsDao.filterByPrice(min, max);
-//        System.out.println(filterByPrice);
-//
-//
-//    }
+    private static final Log LOG = LogFactory.getLog(App.class.getName());
+    public static void main(String[] args) {
+
+
+
+        /**------------------------DATA FOR INITIALIZATION------------------------------**/
+
+        final String carJsonFilename = "car.json";
+
+        List<Car> cars = List.of(
+                Car.builder()
+                        .model("AUDI")
+                        .price(new BigDecimal("1200"))
+                        .mileage(1500D)
+                        .color(BLACK)
+                        .components(List.of("DPS", "ALLOY WHEELS"))
+                        .build(),
+                Car.builder()
+                        .model("BMW")
+                        .price(new BigDecimal("1250"))
+                        .mileage(1300D)
+                        .color(BLACK)
+                        .components(List.of("DPS"))
+                        .build());
+        /**---------------------------------THE END-----------------------------------**/
+
+        /**----------------------------------VALIDATE AND CREATE JSON FORMAT----------------------------------**/
+        CarsJsonConverter carJsonConverter = new CarsJsonConverter(carJsonFilename);
+        carJsonConverter.toJson(
+                cars.stream()
+                        .filter(car -> Validator.validate(new CarValidator(), car))
+                        .toList());
+        /**---------------------------------THE END-----------------------------------**/
+
+
+        /**------------------------------INITIALIZATION CarRepo WITH FROM JSON------------------------**/
+        CarRepo carRepo = new CarRepo(carJsonFilename);
+        /**---------------------------------THE END-----------------------------------**/
+
+        /**SORTING*/
+        System.out.println("-----------------SORT BY MODEL-----------------");
+        List<Car> models = carRepo.sort(MODEL, DESCENDING);
+        models.forEach(System.out::println);
+
+        System.out.println("\n----------------SORT BY COLOR-----------------");
+        List<Car> colors = carRepo.sort(COLOR, ASCENDING);
+        colors.forEach(System.out::println);
+
+        System.out.println("\n-----------------SORT BY PRICE-----------------");
+        List<Car> price = carRepo.sort(PRICE, DESCENDING);
+        price.forEach(System.out::println);
+
+        System.out.println("\n-----------------SORT BY MILEAGE-----------------");
+        String sortByMileage = "mileage";
+        List<Car> mileages = carRepo.sort(MILEAGE, DESCENDING);
+        mileages.forEach(System.out::println);
+
+        /**MILEAGE WITH THE GREATER VALUE*/
+        System.out.println("\n-----------------MILEAGE WITH THE GREATER VALUE-----------------");
+        double mileage = 1200;
+        List<Car> carMileage = carRepo.mileageWithTheHighestValue(mileage);
+        carMileage.forEach(System.out::println);
+
+
+        /**GET CARS OF A SPECIFIC COLOR**/
+        System.out.println("\n-----------------GET CARS OF A SPECIFIC COLOR-----------------");
+        Map<Color, Long> carQuantity = carRepo.countByColor();
+        carQuantity.forEach((k, v) -> System.out.printf(" Color: %s \n Get car by color: %s\n", k, v));
+
+
+        /**EXPENSIVE CAR**/
+        System.out.println("\n---------------FIND THE MOST EXPENSIVE CAR WITH A SPECIFIC MODEL NAME-------------");
+        Map<String, List<Car>> expensiveCarByModel = carRepo.getMostExpensiveCarPerModel(BMW);
+        expensiveCarByModel.forEach((k, v) -> System.out.printf(" Model: %s \n Get car by model: %s\n", k, v));
+
+        /**CAR STATISTICS MILEAGE*/
+        System.out.println("\n---------------CAR STATISTICS MILEAGE-------------");
+        DoubleSummaryStatistics statistics = carRepo.getStatisticsMileage();
+        System.out.printf("Statistics mileage: Min: %s, Max: %s, Average: %s \n", statistics.getMin(),
+                statistics.getMax(), statistics.getAverage());
+
+
+        /**CAR STATISTICS PRICE*/
+        System.out.println("\n---------------CAR STATISTICS PRICE-------------");
+        StatisticsCollector.Statistics<BigDecimal> statisticsPrice = carRepo.getStatisticsPrice();
+        System.out.println("Statistics price: " + statisticsPrice);
+
+        /**THE MOST EXPENSIVE CAR*/
+        System.out.println("\n---------------THE MOST EXPENSIVE CAR-------------");
+        List<Car> expensiveCar = carRepo.getExpensiveCar();
+        System.out.println(expensiveCar);
+
+        /**AN ALPHABETICALLY SORTED COLLECTION OF COMPONENTS*/
+        System.out.println("\n---------------AN ALPHABETICALLY SORTED COLLECTION OF COMPONENTS-------------");
+        List<Car> sortedComponents = carRepo.sortComponents();
+        System.out.println(sortedComponents);
+
+        /**GROUP BY COMPONENT KEY*/
+        System.out.println("\n---------------KEY COMPONENT-------------");
+        Map<String, List<Car>> mapKeyComponent = carRepo.groupByComponents();
+        mapKeyComponent.forEach((k,v) -> System.out.printf(" Model: %s \n Get car by model: %s\n", k, v));
+
+        /**FILTERING BY PRICE*/
+        System.out.println("\n---------------FILTERING BY PRICE-------------");
+        BigDecimal min = new BigDecimal("1200");
+        BigDecimal max = new BigDecimal("1300");
+        List<Car> filterByPrice = carRepo.getCarsByPriceBetween(min, max);
+        System.out.println(filterByPrice);
+    }
 }
