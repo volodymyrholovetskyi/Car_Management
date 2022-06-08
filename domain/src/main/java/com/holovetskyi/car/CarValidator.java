@@ -36,11 +36,8 @@ public class CarValidator implements Validator<Car> {
         }
 
         var mileage = car.mileage;
-        if (mileage == null) {
-            errors.put("mileage", "null");
-            return errors;
-        } else if (car.mileage.compareTo(BigDecimal.ZERO) < 0) {
-            errors.put("mileage", "cannot be negative");
+        if (car.mileage <= 0) {
+            errors.put("mileage", "cannot be negative either null");
             return errors;
         }
 

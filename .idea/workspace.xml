@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf844920-8ea5-463a-af07-17171ca07604" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/car.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/car_test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/comaparator/CarComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/comaparator/CustomComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/src/main/java/com/holovetskyi/json/CarsJsonConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/src/main/java/com/holovetskyi/json/JsonConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/src/main/java/com/holovetskyi/json/exception/JsonConverterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/exception/CarRepoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/statistics/StatisticsCollector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/type/ModelType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/type/SortType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/test/java/com/holovetskyi/repo/CarRepoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/test/java/com/holovetskyi/repo/SimpleFilename.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo/src/test/java/com/holovetskyi/repo/SortAssertion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/holovetskyi/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/holovetskyi/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/holovetskyi/Init.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/CarUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/CarUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/CarValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/CarValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/holovetskyi/car/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/Car$CarBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/Car$CarBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/CarUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/CarUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/CarValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/CarValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/type/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/target/classes/com/holovetskyi/car/type/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/repo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/CarRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/CarRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/CarRepoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/CarStatisticsPriceAndMileage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/repo/src/main/java/com/holovetskyi/repo/type/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/repo/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/src/main/java/com/holovetskyi/validator/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/validator/src/main/java/com/holovetskyi/validator/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/validator/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/target/classes/com/holovetskyi/validator/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/validator/target/classes/com/holovetskyi/validator/Validator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/validator/target/classes/module-info.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk-18.0.1.1/lib/src.zip!/java.base/java/util/function/BiFunction.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="29fGmz47Y2rpNNV06ViYUB1NYEG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/J_A_V_A/CarCollectionManagementApp",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.holovetskyi.repo" />
+      <recent name="com.holovetskyi" />
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.holovetskyi.repo" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="App" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.com.holovetskyi.App">
+    <configuration name="com.holovetskyi.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.holovetskyi.App" />
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.holovetskyi.repo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarRepoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.holovetskyi.repo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.holovetskyi.repo" />
+      <option name="MAIN_CLASS_NAME" value="com.holovetskyi.repo.CarRepoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarRepoTest.shouldReturn_sortedList_byModel_inAscendingDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.holovetskyi.repo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.holovetskyi.repo" />
+      <option name="MAIN_CLASS_NAME" value="com.holovetskyi.repo.CarRepoTest" />
+      <option name="METHOD_NAME" value="shouldReturn_sortedList_byModel_inAscendingDirection(com.holovetskyi.repo.type.SortType)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.holovetskyi.App" />
+        <item itemvalue="JUnit.CarRepoTest" />
+        <item itemvalue="JUnit.CarRepoTest.shouldReturn_sortedList_byModel_inAscendingDirection" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf844920-8ea5-463a-af07-17171ca07604" name="Changes" comment="" />
+      <created>1653496894236</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653496894236</updated>
+      <workItem from="1653496902656" duration="4819000" />
+      <workItem from="1653512537554" duration="2137000" />
+      <workItem from="1653578620817" duration="6414000" />
+      <workItem from="1653844005008" duration="4138000" />
+      <workItem from="1653932087731" duration="4332000" />
+      <workItem from="1654106537581" duration="4605000" />
+      <workItem from="1654187082753" duration="13721000" />
+      <workItem from="1654269483069" duration="15385000" />
+      <workItem from="1654354408955" duration="6689000" />
+      <workItem from="1654420875955" duration="19973000" />
+      <workItem from="1654529409697" duration="1824000" />
+      <workItem from="1654535206083" duration="6261000" />
+      <workItem from="1654618040563" duration="4292000" />
+      <workItem from="1654629407368" duration="7151000" />
+      <workItem from="1654699280865" duration="918000" />
+      <workItem from="1654705693377" duration="4525000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/repo/src/test/java/com/holovetskyi/repo/SortAssertion.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CarCollectionManagementApp$CarRepoTest.ic" NAME="CarRepoTest Coverage Results" MODIFIED="1654700139347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.holovetskyi.repo.*</FILTER>
+    </SUITE>
+  </component>
+</project>

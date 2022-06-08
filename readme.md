@@ -50,10 +50,12 @@ have a set of methods that provide us with the following functionalities: <br>
 ```
 ---
 ## ***Technologies***
+
 - Docker
 - Git
 - JSON
 - JUnit, AssertJ
+- Java 18
 - Lombok
 - Multi-module
 - Stream API
